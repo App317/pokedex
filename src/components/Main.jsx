@@ -17,17 +17,19 @@ const Main = () => {
     const response = await axios.get(url);
     setNextUrl(response.data.next);
     setPrevUrl(response.data.previous);
-    getPokemon(response.data.results);
+    getPokeData(response.data.results);
     setLoading(false);
-    //console.log(pokeData);
   };
   //duplication error most likely occuring somehow in this code
-  const getPokemon = async (response) => {
+  const getPokeData = async (response) => {
+    //forEach instead of map because it runs independently from async calls, causing less errors
     response.map(async (item) => {
       const result = await axios.get(item.url);
+
       setPokeData((state) => {
         state = [...state, result.data];
         state.sort((a, b) => (a.id > b.id ? 1 : -1));
+
         return state;
       });
     });
@@ -36,42 +38,47 @@ const Main = () => {
   useEffect(() => {
     pokeFun();
   }, [url]);
+
   return (
     <>
+      <div className="btn-group">
+        {prevUrl && (
+          <button
+            className="prev-button"
+            onClick={() => {
+              setPokeData([]);
+              setUrl(prevUrl);
+            }}
+          >
+            Previous
+          </button>
+        )}
+
+        {nextUrl && (
+          <button
+            className="next-button"
+            onClick={() => {
+              setPokeData([]);
+              setUrl(nextUrl);
+            }}
+          >
+            Next
+          </button>
+        )}
+      </div>
+
       <div className="container">
         <div className="left-content">
-          <Card
-            pokemon={pokeData}
-            loading={loading}
-            infoPokemon={(poke) => setPokeDex(poke)}
-          />
-
-          <div className="btn-group">
-            {prevUrl && (
-              <button
-                onClick={() => {
-                  setPokeData([]);
-                  setUrl(prevUrl);
-                }}
-              >
-                Previous
-              </button>
-            )}
-
-            {nextUrl && (
-              <button
-                onClick={() => {
-                  setPokeData([]);
-                  setUrl(nextUrl);
-                }}
-              >
-                Next
-              </button>
-            )}
+          <div className="left-cards">
+            <Card
+              pokemon={pokeData}
+              loading={loading}
+              infoPokemon={(poke) => setPokeDex(poke)}
+            />
           </div>
-        </div>
-        <div className="right-content">
-          <PokeInfo data={pokeDex} />
+          <div className="right-content">
+            <PokeInfo data={pokeDex} />
+          </div>
         </div>
       </div>
     </>

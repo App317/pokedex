@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: #7d83df;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    width: 98%;
+    margin: auto;
+    padding-top: 10vmin;
+    display: flex;
+}
+.left-content, .right-content {
+    flex-basis: 50%;
+}
+.btn-group {
+    display: flex;
+}
+.btn-group button {
+    outline: none;
+    border: none;
+    width: 150px;
+    padding: 0.3rem 0;
+    margin: 1rem;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background-color: #b74555;
+    border-radius: 8px;
+}
+ .next-button button {
+   
+ }
+
+.left-cards {
+  display: grid;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  grid-template-rows: repeat(4, auto);
+  grid-gap: 1rem;
+}
+.card { 
+    background-color: #4fcfd8;
+    border-radius: 1.75rem;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+    padding: 0 1rem;
+    display: flex;    
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    
+}
+.card:hover {
+  background-color: rgb(192, 50, 50);
+}
+.card-selected {
+  background-color: rgb(192, 50, 50);
+}
+.card h2 {
+    margin: 0.7rem;
+    font-size: 1rem;
+    text-align: center;
+}
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+.pokemon-name {
+  text-transform: capitalize;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.right-content {
+    width: 50%;
+    text-align: center;
+    color: black;
+    position: fixed;
+    top: 100px;
+    right: 10px;
+}
+.right-content img {
+    margin: 2rem;
+    height: 200px
+}
+.right-content h1 {
+    text-transform: capitalize;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.abilities {
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+}
+.abilities .group {
+    background-color: #b74555;
+    color: white;
+    padding: 0.5rem;
+    font-size: 12px;
+    border-radius: 8px;
+}
+.base-stat {
+    margin-top: 2rem;
+    
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
