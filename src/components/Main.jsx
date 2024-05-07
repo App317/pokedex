@@ -12,30 +12,20 @@ const Main = () => {
   const [prevUrl, setPrevUrl] = useState();
   const [pokeDex, setPokeDex] = useState();
 
-  const pokeFun = async () => {
-    setLoading(true);
-    const response = await axios.get(url);
-    setNextUrl(response.data.next);
-    setPrevUrl(response.data.previous);
-    getPokeData(response.data.results);
-    setLoading(false);
-  };
-  //duplication error most likely occuring somehow in this code
   const getPokeData = async (response) => {
-    //forEach instead of map because it runs independently from async calls, causing less errors
-    response.map(async (item) => {
-      const result = await axios.get(item.url);
-
-      setPokeData((state) => {
-        state = [...state, result.data];
-        state.sort((a, b) => (a.id > b.id ? 1 : -1));
-
-        return state;
-      });
-    });
+    const pokemonPromises = response.map((query) => axios.get(query.url));
+    return await Promise.all(pokemonPromises);
   };
 
   useEffect(() => {
+    const pokeFun = async () => {
+      setLoading(true);
+      const response = await axios.get(url);
+      setNextUrl(response.data.next);
+      setPrevUrl(response.data.previous);
+      setPokeData(await getPokeData(response.data.results));
+      setLoading(false);
+    };
     pokeFun();
   }, [url]);
 
@@ -44,9 +34,7 @@ const Main = () => {
       <div className="btn-group">
         {prevUrl && (
           <button
-            className="prev-button"
             onClick={() => {
-              setPokeData([]);
               setUrl(prevUrl);
             }}
           >
@@ -56,9 +44,7 @@ const Main = () => {
 
         {nextUrl && (
           <button
-            className="next-button"
             onClick={() => {
-              setPokeData([]);
               setUrl(nextUrl);
             }}
           >
