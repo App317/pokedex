@@ -6,6 +6,7 @@
 }
 body {
     background-color: #7d83df;
+    overflow: hidden;
 }
 
 .container {
@@ -14,33 +15,50 @@ body {
     padding-top: 10vmin;
     display: flex;
 }
-.left-content, .right-content {
-    flex-basis: 50%;
+.left-content {
+    flex-basis: 55vmax;
+    position: relative;
+    bottom: 10vmin;
+}
+.header{
+    font-family: 'Pokemon Solid', sans-serif;
+    color: yellow;
+    -webkit-text-stroke-width: 0.15vmin;
+    -webkit-text-stroke-color: blue;
+    font-size: 6vmin;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    border: black 0.7vmin solid;
+    border-radius: 20vmin;
+    border-top: 1vmin;
+    background-color: rgb(190, 60, 60);
+    position: relative;
+    width: 45vmin;
+    left: 17vmax;
 }
 .btn-group {
     display: flex;
+    justify-content: space-between;
 }
 .btn-group button {
-    outline: none;
     border: none;
-    width: 150px;
-    padding: 0.3rem 0;
-    margin: 1rem;
-    font-size: 17px;
+    width: 17vmin;
+    padding: 0.4rem; 
+    margin: 1vmin;
+    font-size: 2.2vmin;
     font-weight: bold;
     color: white;
     background-color: #b74555;
-    border-radius: 8px;
+    border-radius: 1rem;
+    position: relative;
+    cursor: pointer;
 }
- .next-button button {
-   
- }
 
 .left-cards {
-  display: grid;
-  grid-template-columns: repeat(5,minmax(0,1fr));
-  grid-template-rows: repeat(4, auto);
-  grid-gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(5,minmax(0,1fr));
+    grid-template-rows: repeat(4, auto);
+    grid-gap: 1vmin;
 }
 .card { 
     background-color: #4fcfd8;
@@ -53,17 +71,16 @@ body {
     flex-direction: column;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-    
 }
 .card:hover {
-  background-color: rgb(192, 50, 50);
+    background-color: rgb(192, 50, 50);
 }
 .card-selected {
-  background-color: rgb(192, 50, 50);
+    background-color: rgb(192, 50, 50);
 }
 .card h2 {
-    margin: 0.7rem;
-    font-size: 1rem;
+    margin: 0.9vmin;
+    font-size: 1.8vmin;
     text-align: center;
 }
 .card img {
@@ -71,45 +88,51 @@ body {
     height: auto;
 }
 .pokemon-name {
-  text-transform: capitalize;
+    text-transform: capitalize;
 }
-
 .right-content {
-    width: 50%;
+    display: inline-block;
+    width: 33vmax;
+    height: fit-content;
+    position: relative;
+    margin-left: 5%;
     text-align: center;
-    color: black;
-    position: fixed;
-    top: 100px;
-    right: 10px;
+    background: radial-gradient(circle, rgba(218,110,202,1) 49%, rgba(153,74,193,1) 82%);    
+    border: black 0.7vmin solid;
+    border-radius: 14vmin;
+    top: 10vmin;
 }
 .right-content img {
-    margin: 2rem;
-    height: 200px
+    margin: 4vmin;
+    height: 22vmin;
+    background: rgba(0,0,0,0.2);
 }
 .right-content h1 {
     text-transform: capitalize;
     font-weight: bold;
     letter-spacing: 1px;
+    font-size: 4vmin;
+    margin-top: 5vmin;
 }
-
 .abilities {
-    width: 30%;
-    margin: auto;
+    margin-right: 5vmin;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 1rem;
+    justify-content: center;
 }
 .abilities .group {
-    background-color: #b74555;
+    background-color: #be2237;
     color: white;
-    padding: 0.5rem;
-    font-size: 12px;
-    border-radius: 8px;
+    padding-top: 3vmin;
+    font-size: 1.5vmin;
+    margin-left: 5%;
+    border-radius: 2vmin;
+    height: 6vmin;
+    width: 20vmin;
+    text-transform: capitalize;
 }
 .base-stat {
-    margin-top: 2rem;
-    
+    margin-top: 3vmin;
+    font-size: 2vmin;
+    line-height: 4vmin;
+   
 }
-
-

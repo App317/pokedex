@@ -12,6 +12,8 @@ const Main = () => {
   const [prevUrl, setPrevUrl] = useState();
   const [pokeDex, setPokeDex] = useState();
 
+  const [animatePokeInfo, setAnimatePokeInfo] = useState(false);
+
   const getPokeData = async (response) => {
     const pokemonPromises = response.map((query) => axios.get(query.url));
     return await Promise.all(pokemonPromises);
@@ -31,30 +33,30 @@ const Main = () => {
 
   return (
     <>
-      <div className="btn-group">
-        {prevUrl && (
-          <button
-            onClick={() => {
-              setUrl(prevUrl);
-            }}
-          >
-            Previous
-          </button>
-        )}
-
-        {nextUrl && (
-          <button
-            onClick={() => {
-              setUrl(nextUrl);
-            }}
-          >
-            Next
-          </button>
-        )}
-      </div>
-
       <div className="container">
         <div className="left-content">
+          <h1 className="header">Pokédex</h1>
+          <div className="btn-group">
+            {prevUrl && (
+              <button
+                onClick={() => {
+                  setUrl(prevUrl);
+                }}
+              >
+                Previous
+              </button>
+            )}
+
+            {nextUrl && (
+              <button
+                onClick={() => {
+                  setUrl(nextUrl);
+                }}
+              >
+                Next
+              </button>
+            )}
+          </div>
           <div className="left-cards">
             <Card
               pokemon={pokeData}
@@ -62,9 +64,9 @@ const Main = () => {
               infoPokemon={(poke) => setPokeDex(poke)}
             />
           </div>
-          <div className="right-content">
-            <PokeInfo data={pokeDex} />
-          </div>
+        </div>
+        <div className="right-content">
+          <PokeInfo data={pokeDex} />
         </div>
       </div>
     </>
