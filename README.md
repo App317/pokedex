@@ -1,10 +1,5 @@
-# Getting Started with Create React App
+![image](https://github.com/App317/pokedex/assets/101300095/5ddc21c9-ee39-4e67-98aa-208607e5f5bd)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start`
 
