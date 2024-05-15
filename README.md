@@ -1,5 +1,5 @@
 <p align="center">
-![Pokedex](https://github.com/App317/pokedex/assets/101300095/3b30d0b9-cf07-4f67-8117-2cbbd16bc922)
+<img width="460" height="300" src="https://github.com/App317/pokedex/assets/101300095/3b30d0b9-cf07-4f67-8117-2cbbd16bc922">
 </p>
 
 
