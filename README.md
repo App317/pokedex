@@ -1,5 +1,6 @@
-<img align="center" src="https://github.com/App317/pokedex/assets/101300095/1a3befe3-f58a-4e5c-afdb-2eef59b46f57">
-
+<p align="center">
+<img src="https://github.com/App317/pokedex/assets/101300095/1a3befe3-f58a-4e5c-afdb-2eef59b46f57">
+</p>
 
 
 
