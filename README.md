@@ -1,4 +1,5 @@
-![image](https://github.com/App317/pokedex/assets/101300095/5ddc21c9-ee39-4e67-98aa-208607e5f5bd)
+![Pokedex](https://github.com/App317/pokedex/assets/101300095/3b30d0b9-cf07-4f67-8117-2cbbd16bc922)
+
 
 
 ### `npm start`
