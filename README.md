@@ -16,4 +16,4 @@
 
 <h2 align="center">The code</h2>
 
-<p>getPokeData is an asynchronous function that will map the urls that Axios has gotten, and will return them all as promises. This ensures it has all the correct data before being used to set the Pokemon </p>
+<p>getPokeData is an asynchronous function that will map the urls that axios has gotten from PokeAPI, and will return them all as promises. This ensures it has all the correct urls before getting used inside setPokeData. setPokeData awaits for getPokeData to fetch the urls, and sets them to the response. Creating a response variable is also convient because it allows the application to keep track of what the current url is to make use of PokeAPI's resources with 'next' and 'previous' to create the buttons. </p>
