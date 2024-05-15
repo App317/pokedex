@@ -6,7 +6,7 @@
 <div align="center"> 
   <h1 href="https://app317.github.io/pokedex/">Pokedex</h1>
     <p>Powered by <a href="https://www.npmjs.com/package/axios">Axios</a> and <a href="https://pokeapi.co">PokeAPI</a></p>
-  <a href="https://www.flaticon.com/free-icons/pokemon" title="pokemon icons">Pokemon icons created by Those Icons - Flaticon</a>
+ <a href="https://www.flaticon.com/free-icons/pokedex" title="pokedex icons">Pokedex icons created by Roundicons Premium - Flaticon</a>
 </div>
 
 <h2 align="center">How it works</h2>
