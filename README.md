@@ -23,6 +23,11 @@
   
 infoPokemon gets used for the handleCardClick function to retrive an item.
 
-pokemon get used to map the card's data. loading is just to fill in a simple loading text when no cards are available to display. 
+pokemon get used to map the card's data. 
 
-A useState gets defined for setting up our selected cards. We have selectedCard to get the item's id in the map function and we set the setSelectedCard inside the handleCardClick. From this useState, we can change the card's class, and create a selector function which pairs up with PokeInfo.jsx. </p>
+loading is just to fill in a simple loading text when no cards are available to display. 
+
+A useState gets defined for setting up our selected cards. We have selectedCard to get the item's id in the map function and we set the setSelectedCard inside the handleCardClick. From this useState, we can change the card's class, and create a selector function which pairs up with PokeInfo.jsx. when we call it from Main with the prop infoPokemon. </p>
+<p>
+  
+</p>
