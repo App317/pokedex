@@ -76,24 +76,6 @@ This useEffect hook inside Main.jsx does the following:
 - Sets loading state to `false` once the data fetch is complete
 
 
-```javascript
-const Card = ({ pokemon, loading, infoPokemon }) => {
-  const [selectedCard, setSelectedCard] = useState(null);
-
-  const handleCardClick = (item) => {
-    setSelectedCard(item.id);
-    infoPokemon(item);
-  };
-```
-Card.jsx is what displays the list of Pokémon cards. It uses the `handleCardClick` function in order to track what card has been selected and relays the Pokémon's info with `infoPokemon`.
-```javascript
-    <Card
-        pokemon={pokeData}
-        loading={loading}
-        infoPokemon={(poke) => setPokeDex(poke)}
-    />
-    <PokeInfo data={pokeDex} />
-```
 
 ## Roadmap
 - Update CSS in more areas
